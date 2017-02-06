@@ -21,7 +21,6 @@ $this->load->view('templates/_parts/admin_master_header_view'); ?>
     
 	
   <?php echo $the_view_content; ?>
-   hhahahahahah
 </div>
 <div class = "col-md-3 col-sm-3 hidden-xs menu" >
 <?php $this->load->view('templates/_parts/admin_master_rightmenu_view');?>

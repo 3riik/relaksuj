@@ -10,6 +10,11 @@
 </div>
 
 <?php echo $before_body;?>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="<?= base_url()?>assets/admin/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    $('.dropdown-toggle').dropdown()
+</script>
 </body>
+
 </html>
