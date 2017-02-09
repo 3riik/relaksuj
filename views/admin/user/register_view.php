@@ -6,7 +6,7 @@
 ?>
       <h1>Registrácia</h1>
       <div class="line"></div>
-      <?php echo form_open('',array('class'=>'form-horizontal'));?>
+      <?php echo form_open('',array('class'=>'form-vertical'));?>
       <div class="form-group">
         <?php
         echo form_label('Meno','first_name');

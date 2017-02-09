@@ -124,7 +124,7 @@ class User extends MY_Controller
         if($this->form_validation->run()===FALSE)
         {
             $this->load->helper('form');
-            $this->render('admin/user/register_view');
+            $this->render('admin/user/register_view','admin_master');
         }
         else
         {
