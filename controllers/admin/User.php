@@ -40,6 +40,7 @@ class User extends MY_Controller
                 {
                     $this->data['current_user'] = $this->ion_auth->user()->row();
                     $this->data['current_user_menu'] = $this->load->view('admin/logged_in_view',NULL,TRUE);
+                    $this->session->set_flashdata('message', 'Prihlásený. Vitaj '.$this->data['current_user']->first_name.'.');
                     redirect($this->agent->referrer());
                 }
                 else

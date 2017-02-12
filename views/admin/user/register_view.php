@@ -59,7 +59,7 @@
         ?>
           <div class="col-sm-9">
             <?php
-            echo form_input('email','','class="form-control" type="email" id="inputEmail" placeholder="Email"');
+            echo form_input('email',set_value('email'),'class="form-control" type="email" id="inputEmail" placeholder="Email"');
             echo form_error('email','<span class="form-error help-block">','</span>');
             ?>
           </div>

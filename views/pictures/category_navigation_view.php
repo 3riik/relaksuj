@@ -4,7 +4,7 @@
  */
 ?>
 <nav class="text-center" aria-label="Category pictures pages">
- <ul class="pagination pagination-lg">
+ <ul class="pagination">
     <?php 
     if($current_page>1)
         {?>
