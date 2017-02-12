@@ -20,7 +20,7 @@ echo form_open('pictures/add',array('class'=>'form-horizontal'));?>
 <div class="form-group">
     <?php echo form_label('Kategória','category',array('class'=>'col-sm-2 control-label')); ?> 
     <div class="col-sm-9">
-        <?php echo form_dropdown('category',$options,$options[1],'class="form-control"');?>
+        <?php echo form_dropdown('category',$options, array_shift($options),'class="form-control"');?>
     </div>
 </div>
 <div class="form-group">
