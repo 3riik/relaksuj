@@ -3,6 +3,7 @@
 /* 
  * @3riik web-design
  */
+ 
 ?>
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -19,7 +20,10 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="<?= base_url()?>">Home</a>
+		<ul class="nav nav-pills">
+			<li role="presentation" class="<?= empty(uri_string()) ? 'active' : ''?>"><a href="<?= base_url()?>">Home</a></li>
+		</ul>
+        
     </div>
     <div class="collapse navbar-collapse" id="login-menu-collapse">
         <?php $this->load->view('templates/_parts/admin_master_rightmenu_view');?>
@@ -49,4 +53,6 @@
         </ul>
     </div>	
 </nav>
+
+
      
