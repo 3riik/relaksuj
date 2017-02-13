@@ -9,4 +9,3 @@
 <?php echo (ENVIRONMENT === 'development') ? 'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?>
 <br><a href="http://github.com/3riik/relaksuj">github.com/3riik/relaksuj</a>
 </p>
-<p>Hahafhafdh github</p>
