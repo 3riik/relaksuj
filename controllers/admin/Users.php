@@ -71,8 +71,9 @@ class Users extends Admin_Controller
     public function edit($user_id = NULL)
     {
         $user_id = $this->input->post('user_id') ? $this->input->post('user_id') : $user_id;
-        $this->data['page_title'] = 'Edit user';
+        $this->data['page_title'] = 'Upraviť používateľa';
         $this->load->library('form_validation');
+        $this->data['groups'] = $this->ion_auth->groups()->result();
 
         $this->form_validation->set_rules('first_name','First name','trim');
         $this->form_validation->set_rules('last_name','Last name','trim');
@@ -82,7 +83,7 @@ class Users extends Admin_Controller
         $this->form_validation->set_rules('email','Email','trim|required|valid_email');
         $this->form_validation->set_rules('password','Password','min_length[6]');
         $this->form_validation->set_rules('password_confirm','Password confirmation','matches[password]');
-        $this->form_validation->set_rules('groups[]','Groups','required|integer');
+        $this->form_validation->set_rules('groups','Groups','required|integer');
         $this->form_validation->set_rules('user_id','User ID','trim|integer|required');
 
         if($this->form_validation->run() === FALSE)

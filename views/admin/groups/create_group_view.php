@@ -5,19 +5,26 @@
  */
 ?>
 <h1>Vytvoriť skupinu</h1>
-<?php echo $this->session->flashdata('message');?>
 <div class="line"></div>
+
 <?php echo form_open('',array('class'=>'form-horizontal'));?>
+
 <div class="form-group">
-    <?php echo form_label('Názov skupiny','group_name');?>
-    <?php echo form_error('group_name');?>
-    <?php echo form_input('group_name','','class="form-control"');?>
+    <?php echo form_label('Názov skupiny','group_name',array('class'=>'col-sm-2 control-label'));?>
+    <div class="col-sm-9">
+    
+    <?php echo form_input('group_name','','class="form-control" id="inputGroupName" placeholder="Názov skupiny"');?>
+    <?php echo form_error('group_name','<span class="help-block form-error">','</span>');?>    
+    </div>
 </div>
+
 <div class="form-group">
-    <?php echo form_label('Popis skupiny','group_description');?>
-    <?php echo form_error('group_description');?>
-    <?php echo form_input('group_description','','class="form-control"');?>
-</div>
+    <?php echo form_label('Popis skupiny','group_description',array('class'=>'col-sm-2 control-label'));?>
+    <div class="col-sm-9">
+    <?php echo form_input('group_description','','class="form-control" id="inputGroupDescription" placeholder="Popis skupiny"');?>
+    <?php echo form_error('group_description','<span class="help-block form-error">','</span>');?>
+    </div>
+</div>    
 <?php echo form_submit('submit', 'Vytvoriť skupinu','class="btn btn-primary btn-lg btn-block"');?>
 <?php echo form_close();?>
 
