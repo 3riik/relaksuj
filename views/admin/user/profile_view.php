@@ -5,34 +5,35 @@
  */
 ?>
 <h1>Profil</h1>
-<div class="line"></div>
-<table class="profile" >
+<table class="table table-hover">
+  <tbody>
     <tr>
-        <td>Meno </td>
+        <th>Meno </th>
         <td><?= $user->first_name?></td>
     </tr>
     <tr>
-        <td>Priezvisko </td>
+        <th>Priezvisko </th>
         <td><?= $user->last_name?></td>
     </tr>
     <tr>
-        <td>Spoločnosť </td>
+        <th>Spoločnosť </th>
         <td><?= $user->company?></td>
     </tr>
     <tr>
-        <td>Telefón </td>
+        <th>Telefón </th>
         <td><?= $user->phone?></td>
     </tr>
     <tr>
-        <td>Prihlasovacie meno</td>
+        <th>Prihlasovacie meno</th>
         <td><?= $user->username?></td>
     </tr>
     <tr>
-        <td>Email </td>
+        <th>Email </th>
         <td><?= $user->email?></td>
-    </tr>    
+    </tr>
+  </tbody>    
 </table>
-<p><a href="<?= site_url('admin/user/edit')?>">Zmeniť údaje</a></p> 
+<a class="btn btn-primary" href="<?= site_url('admin/user/edit')?>">Zmeniť údaje</a> 
 
         
         
