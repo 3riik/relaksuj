@@ -39,6 +39,7 @@
         <div class="alert alert-success alert-dismissible" role="alert" >
           <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true" style="color:black;">&times;</span></button>
           <?php echo $this->session->flashdata('message');?>
+		  hehe
         </div>
         </span>
     <?php } ?>

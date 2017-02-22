@@ -14,19 +14,19 @@
         <div class="picture"> 
             <?php if($picture->file_ext == '.jpg'){?>
             <a href="<?php echo base_url()?>pictures/view/<?= $picture->filename?>">
-                <img src="<?php echo base_url(),'uploads/img/',$picture->filename.'.jpg'?>" alt="<?=$picture->id ?>"/>
+                <img class="img-rounded" src="<?php echo base_url(),'uploads/img/',$picture->filename.'.jpg'?>" alt="<?=$picture->id ?>"/>
             </a>
             <?php }else{ ?>
             <div id="<?= $picture->filename?>"> 
-                <img data-state="static" src="<?php echo base_url(),'uploads/img/',$picture->filename.'.jpg'?>"/>
+                <img class="img-rounded" data-state="static" src="<?php echo base_url(),'uploads/img/'.$picture->filename.'.jpg'?>"/>
             </div>
             <script type="text/javascript">
             $("#<?= $picture->filename?>").click(function () {    
                 if ($(this).find("img").attr("data-state") == "static") {
-                $(this).find("img").attr("src", "<?= base_url().'./uploads/img/',$picture->filename,'.gif'?>");
+                $(this).find("img").attr("src", "<?= base_url().'./uploads/img/'.$picture->filename.'.gif'?>");
                 $(this).find("img").attr("data-state", "dynamic");
                 } else {
-                $(this).find("img").attr("src", "<?= base_url().'./uploads/img/',$picture->filename,'.jpg'?>");
+                $(this).find("img").attr("src", "<?= base_url().'./uploads/img/'.$picture->filename.'.jpg'?>");
                 $(this).find("img").attr("data-state", "static");
                 }
             });

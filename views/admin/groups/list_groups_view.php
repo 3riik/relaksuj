@@ -6,23 +6,37 @@
 ?>
 <h1>Skupiny</h1>
 <div class="line"></div>
-<a class="button" href="<?php echo site_url('admin/groups/create');?>">Vytvoriť skupinu</a>
-
+<a class="btn btn-primary" href="<?php echo site_url('admin/groups/create');?>">Vytvoriť skupinu</a><br><br>
 
 <?php
     if(!empty($groups))
     {
-        echo '<table class="groups">';
-        echo '<tr><td>ID</td><td>Názov skupiny</td></td><td>Popis skupiny</td><td>Operácie</td></td>';
+    	?>
+        <table class="table table-hover table-condensed">
+        <thead>
+        <tr>
+        	<td>ID</td>
+        	<td>Názov skupiny</td>
+        	<td>Popis skupiny</td>
+        	<td>Operácie</td>
+        </tr>
+        </thead>
+        <tbody>
+        <?php 
         foreach($groups as $group)
         {
-            echo '<tr>';
-          echo '<td>'.$group->id.'</td><td>'.anchor('admin/users/index/'.$group->id,$group->name).'</td><td>'.$group->description.'</td><td>'.anchor('admin/groups/edit/'.$group->id,'<span class="glyphicon glyphicon-pencil">Upraviť</span>');
-          if(!in_array($group->name, array('admin','members'))) echo ' '.anchor('admin/groups/delete/'.$group->id,'<span class="glyphicon glyphicon-remove">Vymazať</span>');
-          echo '</td>';
-          echo '</tr>';
+        	?>
+            <tr>
+            	<td><?= $group->id?></td>
+            	<td><?= anchor('admin/users/index/'.$group->id,$group->name)?></td>
+            	<td><?= $group->description ?></td>
+            	<td><?= anchor('admin/groups/edit/'.$group->id,'<span class="glyphicon glyphicon-pencil">Upraviť</span>');
+          		if(!in_array($group->name, array('admin','members'))) echo ' '.anchor('admin/groups/delete/'.$group->id,'<span class="glyphicon glyphicon-remove">Vymazať</span>');?>
+          		</td>
+          	</tr>
+          <?php 
         }
-        echo '</table>';
+        ?></tbody></table><?php 
     }
 ?>
 
