@@ -18,15 +18,15 @@
             </a>
             <?php }else{ ?>
             <div id="<?= $picture->filename?>"> 
-                <img data-state="static" src="<?php echo base_url(),'uploads/img/',$picture->filename.'.jpg'?>"/>
+                <img data-state="static" src="<?php echo base_url(),'uploads/img/'.$picture->filename.'.jpg'?>"/>
             </div>
             <script type="text/javascript">
             $("#<?= $picture->filename?>").click(function () {    
                 if ($(this).find("img").attr("data-state") == "static") {
-                $(this).find("img").attr("src", "<?= base_url().'./uploads/img/',$picture->filename,'.gif'?>");
+                $(this).find("img").attr("src", "<?= base_url().'./uploads/img/'.$picture->filename.'.gif'?>");
                 $(this).find("img").attr("data-state", "dynamic");
                 } else {
-                $(this).find("img").attr("src", "<?= base_url().'./uploads/img/',$picture->filename,'.jpg'?>");
+                $(this).find("img").attr("src", "<?= base_url().'./uploads/img/'.$picture->filename.'.jpg'?>");
                 $(this).find("img").attr("data-state", "static");
                 }
             });
