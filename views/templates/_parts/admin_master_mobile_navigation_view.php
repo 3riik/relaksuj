@@ -15,9 +15,9 @@
         <span class="glyphicon glyphicon-user"></span>
         </button>
 		<div class="btn-group navbar-btn">
-		<button type="button" class="btn btn-primary<?= empty(uri_string()) ? 'active' : ''?>"><a href="<?= base_url()?>">Home</a></button>
-		<button type="button" class="btn btn-primary<?= (strcmp(uri_string(),'pictures') == 0) ? 'active' : ''?>"><a href="<?= site_url('pictures/')?>">Obrázky</a>		</button>
-		<button type="button" class="btn btn-primary dropdown-toggle"
+		<a class="btn btn-primary btn-lg <?= empty(uri_string()) ? 'active' : ''?>" href="<?= base_url()?>">Home</a>
+		<a class="btn btn-primary btn-lg <?= (strcmp(uri_string(),'pictures') == 0) ? 'active' : ''?>" href="<?= site_url('pictures/')?>">Obrázky</a>
+		<button type="button" class="btn btn-lg btn-primary dropdown-toggle"
 		 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			<span class="caret"></span><span class="sr-only">Toggle Dropdown</span>
 		 </button>

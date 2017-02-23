@@ -4,13 +4,20 @@
  */
 
 ?>
+<script>
+$(function () {
+$('[data-toggle="tooltip"]').tooltip()})
+</script>
 <h1>Všetky obrázky
     <span class="label label-primary">
-        <button class="btn btn-primary btn-xs" type="button" data-toggle="collapse" data-target="#collapseSettings" aria-expanded="false" aria-controls="collapseExample">
-            <span class="glyphicon glyphicon-cog"></span>
+        <button class="btn btn-primary btn-xs" type="button" data-toggle="collapse"
+        data-target="#collapseSettings" aria-expanded="false" aria-controls="collapseExample">
+            <span class="glyphicon glyphicon-cog"  data-toggle="tooltip" 
+            data-placement="right" title="Nastavenia"></span>
         </button>
     </span>
 </h1>
+
 <div class="collapse" id= "collapseSettings"> 
     <div class="well well-sm well-primary">   
     <div class="btn-group">
