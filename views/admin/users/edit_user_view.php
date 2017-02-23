@@ -97,10 +97,10 @@ echo form_label('Potvrdiť nové heslo','password_confirm',array('class'=>'col-s
   <?php
   if(isset($groups))
   {
-    echo form_label('Skupiny','groups[]');
+    echo form_label('Skupiny','groups[]',array('class'=>'col-sm-12'));
     foreach($groups as $group)
     {
-      echo '<div class="radio">';
+      echo '<div class="radio col-sm-12">';
       echo '<label>';
       echo form_radio('groups[]', $group->id, ($group->id == $this->ion_auth->get_users_groups($user->id)->result()[0]->id) ? TRUE : FALSE );
       echo ' '.$group->name;
