@@ -217,7 +217,7 @@ class Pictures extends MY_Controller{
         $file_path = 'uploads/img/'.$data['filename'].$data['file_ext'];
         $image = imagecreatefromgif($file_path);
         imagejpeg($image, 'uploads/img/'.$data['filename'].'.jpg');
-        $this->load->library('image_lib');
+        /*$this->load->library('image_lib');
 		$config = array('width' 		  => '50',
 						'height' 		  => '50',
 						'source_image'	  => 'uploads/img/'.$data['filename'].'.jpg',
@@ -228,7 +228,7 @@ class Pictures extends MY_Controller{
 						'wm_vrt_alignment'=> 'middle',
 						'wm_hor_alignment'=> 'center');
         $this->image_lib->initialize($config);
-        $this->image_lib->watermark();
+        $this->image_lib->watermark();*/
         return;
     }
     private function get_last_file_name()
