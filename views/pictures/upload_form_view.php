@@ -7,7 +7,7 @@ foreach($categories as $category):
     endforeach;
 
 if($this->ion_auth->logged_in()){
-echo form_open('pictures/add',array('class'=>'form-horizontal'));?>
+echo form_open_multipart('pictures/add',array('class'=>'form-horizontal'));?>
 <div class="form-group">
     <?php echo form_label('Nadpis','title',array('class'=>'col-sm-2 control-label')); ?>
     <div class="col-sm-9">
