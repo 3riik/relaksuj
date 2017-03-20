@@ -17,20 +17,28 @@
                 <img class="img-rounded" src="<?php echo base_url(),'uploads/img/',$picture->filename.'.jpg'?>" alt="<?=$picture->id ?>"/>
             </a>
             <?php }else{ ?>
-            <div id="<?= $picture->filename?>"> 
-                <img class="img-rounded" data-state="static" src="<?php echo base_url(),'uploads/img/'.$picture->filename.'.jpg'?>"/>
+            <div class="gif"  id="<?= $picture->filename?>"> 
+                <img class="img-rounded gif" data-state="static" src="<?php echo base_url(),'uploads/img/'.$picture->filename.'.jpg'?>"/> 
+                <span data-state="static"  class="gif-txt">GIF</span>             
             </div>
-            <script type="text/javascript">
-            $("#<?= $picture->filename?>").click(function () {    
-                if ($(this).find("img").attr("data-state") == "static") {
-                $(this).find("img").attr("src", "<?= base_url().'./uploads/img/'.$picture->filename.'.gif'?>");
-                $(this).find("img").attr("data-state", "dynamic");
-                } else {
-                $(this).find("img").attr("src", "<?= base_url().'./uploads/img/'.$picture->filename.'.jpg'?>");
-                $(this).find("img").attr("data-state", "static");
-                }
-            });
-            </script>
+			  <script type="text/javascript">
+			  $("#<?= $picture->filename?>").click(function () {		  
+				  var img = $(this).find('img');
+				  var gifTxt = $(this).find('span');
+			    if (img.attr("data-state") == "static") {
+			      $(img).attr("src", "<?= base_url().'./uploads/img/'.$picture->filename.'.gif'?>");
+			      $(img).attr("data-state", "dynamic");
+			      $(img).attr("id","<?= $picture->filename?>");
+			      $(gifTxt).attr("class","gif-none");
+			      $(gifTxt).text('');
+			    } else {
+			      $(img).attr("src", "<?= base_url().'./uploads/img/'.$picture->filename.'.jpg'?>");
+			      $(img).attr("data-state", "static");
+			      $(gifTxt).attr("class","gif-txt");
+			      $(gifTxt).text('GIF');
+			    }
+			  });
+			</script>
             <?php }?>
             <p>Komentárov: <?php echo $this->Pictures_model->get_comments_count($picture->id); ?></p>
             <p class="category">

@@ -13,7 +13,7 @@
  
 <div class="container">
     <div class="row">
-        <div class="hidden-xs col-xs-11">
+        <div class="hidden-xs col-xs-12">
             <a href="<?= base_url()?>"><img class="img-responsive" alt="Relaksuj" src="<?= base_url()?>assets/img/nove.jpg"/></a>  	
         </div>
     </div>	
@@ -25,10 +25,15 @@
         <div class="visible-xs col-xs-12">
             <?php $this->load->view('templates/_parts/admin_master_mobile_navigation_view');?>
         </div>
-    </div>
+	</div>
 </div>
 <!-- Main row -->
 <div class="container" >
+ <div class="row">
+  <div class="hidden-xs visible-sm col-sm-11">
+	<?php $this->load->view('templates/_parts/admin_master_navigation_view');?>
+  </div>
+ </div>
  <div class="row">
     <div class="col-md-2 menu remove-border hidden-sm hidden-xs">  
         <?php $this->load->view('templates/_parts/admin_master_leftmenu_view')?> 
@@ -38,8 +43,7 @@
         <span class="message">
         <div class="alert alert-success alert-dismissible" role="alert" >
           <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true" style="color:black;">&times;</span></button>
-          <?php echo $this->session->flashdata('message');?>
-		  hehe
+          <?= $this->session->flashdata('message');?>
         </div>
         </span>
     <?php } ?>

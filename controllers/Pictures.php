@@ -248,6 +248,7 @@ class Pictures extends MY_Controller{
     public function delete($slug = NULL)
     {
         $data['picture'] = $this->Pictures_model->get_picture($slug);
+       if (!empty($data['picture'])){
         if(!$this->can_edit($data['picture']->uid))        
         {
             $this->session->set_flashdata('message','Prístup zamietnutý.');
@@ -276,6 +277,11 @@ class Pictures extends MY_Controller{
               $this->refreshData();
               $this->render('pictures/index');
             }
+       } else {
+       	$this->refreshData();
+       	$this->render('pictures/index');
+       }
+    
     }
 	/**
      * 

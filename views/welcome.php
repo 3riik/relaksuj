@@ -13,7 +13,11 @@
      echo '<p>Prihláste sa prosím.</p>';
 }
 ?>
-  <p class="warning">Danger</p>
+	<div class="box">
+  <p class="warning">Toto je reprezentatívna stránka. Pre prihlásenie a overenie funkčnosti použite tieto údaje: </p>
+  <p>Meno: <i>administrator</i></p>
+  <p>Heslo: <i>password</i></p>
+  </div>
  
 
   
